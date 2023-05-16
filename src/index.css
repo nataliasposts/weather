@@ -1,0 +1,227 @@
+@font-face {
+  font-family: MartianMono;
+  src: url(./fonts/MartianMono.ttf);
+}
+
+html {
+  font-family: MartianMono, sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.App {
+  background-color: rgba(2, 35, 62, 0.741);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.App .searchInp {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+  position: fixed;
+  top: -20px;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(2, 35, 62, 0.4);
+  padding-right: 13px;
+}
+
+@media screen and (min-width: 500px) {
+  .App .searchInp {
+    left: unset;
+  }
+}
+
+.App .searchInp.hidden {
+  visibility: hidden;
+  position: static;
+}
+
+.App .gridItem {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.App .gridItem.author {
+  transform: scale(1);
+  margin-bottom: 50px;
+  transition: 0.6s all ease-in-out;
+}
+
+.App .gridItem.author:hover {
+  transform: scale(1.2);
+}
+
+.App .gridItem.author.scale {
+  transform: scale(1.2);
+}
+
+.App .searchInp .title {
+  color: #fff;
+  text-align: center;
+}
+
+/* Current Weather Styles */
+
+.currentWeather {
+  text-align: center;
+  font-size: 16px;
+}
+
+.currentWeather .date {
+  margin-top: 5px;
+  color: greenyellow;
+  margin-bottom: 15px;
+}
+
+.currentWeather .current {
+  text-align: center;
+}
+
+.current .main-temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 170px;
+  margin: 0 auto;
+}
+
+.main-temp .main-icon {
+  width: 70px;
+  transform: scale(1);
+  transition: 0.1s all linear;
+}
+
+.main-temp .main-icon.scale {
+  transform: scale(1.15);
+}
+
+.main-temp .main-temp-numb {
+  font-size: 42px;
+  font-weight: 100;
+  line-height: 1.1;
+  transition: 0.2s all ease-in-out;
+}
+
+.main-temp .main-temp-numb:hover {
+  font-size: 50px;
+}
+
+.main-temp .main-temp-numb sup {
+  font-weight: 100;
+}
+
+.current .real-feel {
+  font-size: 11px;
+  font-weight: 300;
+  color: greenyellow;
+}
+
+.current h4 {
+  margin-block: 12px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Forecast Styles */
+
+.forecast .heading {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.forecast-container {
+  margin-top: 13px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 10px;
+  position: relative;
+}
+
+.forecast-container .forecast-info {
+  flex: 1 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding-right: 6px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.forecast-container .forecast-info:hover {
+  background-color: rgba(173, 255, 47, 0.15);
+}
+
+.forecast-container .forecast-info.daily {
+  height: 240px;
+}
+
+.forecast-container .forecast-info .f-title {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.forecast-container .forecast-info.daily .icon-cont {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  position: relative;
+}
+
+.forecast-container .forecast-info.daily .icon-cont .topIcon {
+  width: 35px;
+}
+
+.forecast-container .forecast-info.daily .icon-cont .bottomIcon {
+  width: 35px;
+}
+
+.forecast-container .forecast-info .f-humidity {
+  color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.forecast-container .forecast-info.last {
+  border-right: none;
+}
+
+.chart-container {
+  position: absolute;
+  top: 80px;
+}
+
+.chart-container-daily {
+  position: absolute;
+  top: 120px;
+}
+
+.chart-container-daily.bottom {
+  position: absolute;
+  top: 180px;
+}
